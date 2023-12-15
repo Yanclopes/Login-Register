@@ -14,9 +14,21 @@ use Domain\Login\Actions\GenerateAccessToken;
  */
 class LoginController extends Controller
 {
+    /*
+     * Regras:
+     *
+     * 1 - se esta funcionando não mexa
+     * 2 - !code == !dev
+     * 3 - não dar push em produção na sexta
+     * 4 - se o servidor cair depois das 18 ele que se levante sozinho
+     * 5 - sem cafe, sem trabalho
+     *
+     * Horas trabalhadas nesse codigo - 8
+     */
+
     public function __construct()
     {
-        $this->middleware('auth:sanctum')->except('Login');
+        $this->middleware('auth:sanctum')->except('Login');+
     }
     public function Login(LoginRequest $loginRequest, GenerateAccessToken $generateAccessToken):LoginResource
     {
