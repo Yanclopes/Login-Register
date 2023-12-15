@@ -13,15 +13,29 @@ return new class extends Migration
     {
         Schema::create('sheet', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
             $table->string('name');
             $table->string('class');
-            $table->string('race');
-            $table->string('tendency');
-            $table->integer('exp');
             $table->integer('level');
+            $table->string('race');
+            $table->string('background');
+            $table->string('alignment');
+            $table->string('alignment_tendency');
             $table->json('attributes');
-            $table->json('characters');
+            $table->json('hit_points');
+            $table->integer('speed');
+            $table->integer('armor_class');
+            $table->integer('initiative');
+            $table->integer('action_points');
+            $table->boolean('inspiration');
+            $table->json('saving_throws');
+            $table->json('skills');
+            $table->json('languages');
+            $table->json('senses');
+            $table->json('racial_traits');
+            $table->json('class_traits');
+            $table->json('known_spells');
+            $table->json('equipment');
+            $table->text('background_story');
             $table->timestamps();
         });
     }
