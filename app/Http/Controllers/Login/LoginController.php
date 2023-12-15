@@ -16,9 +16,8 @@ class LoginController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:sanctum')->except('login');
+        $this->middleware('auth:sanctum')->except('Login');
     }
-
     public function Login(LoginRequest $loginRequest, GenerateAccessToken $generateAccessToken):LoginResource
     {
         return new LoginResource($generateAccessToken(LoginDTO::fromRequest($loginRequest)));

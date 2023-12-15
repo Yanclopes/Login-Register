@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\login\LoginController;
+use App\Http\Controllers\Login\LoginController;
 use \App\Http\Controllers\Register\RegisterController;
 
 /*
@@ -20,6 +20,6 @@ use \App\Http\Controllers\Register\RegisterController;
 });*/
 
 Route::prefix('v1')->group(function (){
-    Route::post('login', [LoginController::class, 'Login'])->name('login');
+    Route::post('login', [LoginController::class, 'Login']);
     Route::post('registro', [RegisterController::class, 'Register']);
 });
